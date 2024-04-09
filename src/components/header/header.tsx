@@ -28,7 +28,7 @@ const Header = () => {
             </div>
             <div className="flex items-center justify-between gap-5">
                 {/* Post */}
-                <Menu as="div" className="relative ml-3 w-20">
+                <Menu as="div" className="relative ml-3 w-10">
                   <div className='w-10'>
                     <Menu.Button className="relative flex  outline-none w-24">
                       <SquarePlus className='text-red-500' />
