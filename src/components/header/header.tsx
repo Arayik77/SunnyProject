@@ -11,7 +11,7 @@ const Header = () => {
 
     return (
         <nav className="flex items-center justify-between bg-zinc-50 h-16 dark:bg-slate-500 shadow-light-300
-            max-w-12xl mx-4 py-10 sm:px-6 lg:px-8">
+            max-w-8xl mx-4 py-8 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between">
                 <img src={ logo } className='w-11 pr-2'/>
                 <h3 className='font-bold'>
@@ -28,8 +28,8 @@ const Header = () => {
             </div>
             <div className="flex items-center justify-between gap-5">
                 {/* Post */}
-                <Menu as="div" className="relative ml-3">
-                  <div>
+                <Menu as="div" className="relative ml-3 w-20">
+                  <div className='w-10'>
                     <Menu.Button className="relative flex  outline-none w-24">
                       <SquarePlus className='text-red-500' />
                     </Menu.Button>
@@ -61,7 +61,7 @@ const Header = () => {
 
                 {/* Dark Ligth */}
                 <Menu as="div" className="relative ml-3">
-                  <div>
+                  <div className='w-10'>
                     <Menu.Button className="relative flex  outline-none w-24">
                       <Sun className='text-red-500' />
                     </Menu.Button>
@@ -101,7 +101,7 @@ const Header = () => {
 
                 {/* User */}
                 <Menu as="div" className="relative ml-3">
-                  <div>
+                  <div className='w-10'>
                     <Menu.Button className="relative flex  outline-none w-24">
                       <User className='text-red-500' />
                     </Menu.Button>
