@@ -33,6 +33,12 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --font-inter {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-variation-settings: "slnt" 0;
+    }
   }
 
   .dark {
@@ -72,5 +78,43 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .font-inter-normal {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
+    font-style: normal;
+    font-weight: normal;
+  }
+  .font-inter-bold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: bolder;
+    font-variation-settings: "slnt" 0;
+  }
+  .font-space-grotesk-normal {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .font-space-grotesk-bold {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+  }
+  .h3-bold {
+    @apply text-[20px] font-bold leading-[26px];
+  }
+  .h3-semibold {
+    @apply text-[20px] font-semibold leading-[24.8px];
+  }
+  .btn {
+    @apply bg-zinc-200 dark:bg-zinc-800;
   }
 }
