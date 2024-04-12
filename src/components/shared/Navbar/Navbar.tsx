@@ -11,10 +11,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import logo from "@/assets/logo.webp";
+import GlobalSearch from "@/components/shared/GlobalSearch/GlobalSearch";
+import Theme from "@/components/shared/Navbar/Theme";
+import UserMenu from "@/components/shared/Navbar/UserMenu";
 
 const Navbar = () => {
   return (
-    <nav className="fixed z-50 flex w-full items-center justify-between gap-3 bg-zinc-50 shadow-sm sm:px-12 dark:bg-zinc-900 dark:shadow-black">
+    <nav className="fixed p-5 z-50 flex w-full items-center justify-between gap-3 bg-zinc-50 shadow-sm sm:px-12 dark:bg-zinc-900 dark:shadow-black">
       <Link to="/" className="flex items-center gap-1">
         <img src={logo} alt="PlusDev.NET" className="w-9" />
 
@@ -22,9 +25,8 @@ const Navbar = () => {
           PlusDev<span className="text-red-500">.NET</span>
         </h3>
       </Link>
-      GlobalSearch
+      <GlobalSearch />
       <div>
-        Notification
         <DropdownMenu>
           <DropdownMenuTrigger className="p-1">
             <LucidePlusSquare className="h-6 w-6 text-red-500" />
@@ -48,6 +50,9 @@ const Navbar = () => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+
+        <Theme type="dropdown"/>
+        <UserMenu />
       </div>
     </nav>
   );
