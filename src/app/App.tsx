@@ -13,8 +13,8 @@ const App = () => {
       <div className="flex">
         <LeftSidebar />
 
-        <section className="flex min-h-screen flex-1 flex-col px-6 pb-6 pt-28 xs:px-2 sm:px-10 md:pb-10">
-          <div className="max-auto w-full max-w-5xl">
+        <section className="flex min-h-screen flex-1 flex-colpx-6 pb-6 pt-28 xs:px-2 sm:px-10 md:px-6 md:pb-10">
+          <div className="mx-auto w-full">
             <Suspense fallback={<div>Loading...</div>}>
               <Routes>
                 <Route path="/" element={<MainPageAsync />} />

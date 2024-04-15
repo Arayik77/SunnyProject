@@ -13,7 +13,7 @@ import {
 import logo from "@/assets/logo.webp";
 import GlobalSearch from "@/components/shared/GlobalSearch/GlobalSearch";
 import Theme from "@/components/shared/Navbar/Theme";
-import UserMenu from "@/components/shared/Navbar/UserMenu";
+import UserMenu from "@/components/shared/Navbar/UserMenu"
 
 const Navbar = () => {
   return (
@@ -51,8 +51,8 @@ const Navbar = () => {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <Theme type="dropdown"/>
-        <UserMenu />
+        <Theme type="dropdown" />
+        <UserMenu/>
       </div>
     </nav>
   );
