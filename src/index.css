@@ -207,4 +207,8 @@
   .small-semibold {
     @apply text-[12px] font-semibold leading-[15px];
   }
+
+  .small-text {
+    @apply text-[14px] leading-[16px];
+  }
 }
