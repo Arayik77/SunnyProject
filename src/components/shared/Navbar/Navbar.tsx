@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import {
+  LucideMenu,
   LucideNewspaper,
   LucidePlusSquare,
   LucideShieldQuestion,
@@ -13,7 +14,9 @@ import {
 import logo from "@/assets/logo.webp";
 import GlobalSearch from "@/components/shared/GlobalSearch/GlobalSearch";
 import Theme from "@/components/shared/Navbar/Theme";
-import UserMenu from "@/components/shared/Navbar/UserMenu"
+import UserMenu from "./UserMenu";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import BurgerMenuSidebar from "@/components/shared/BurgerSidebar/BurgerSidebar";
 
 const Navbar = () => {
   return (
@@ -26,7 +29,7 @@ const Navbar = () => {
         </h3>
       </Link>
       <GlobalSearch />
-      <div>
+      <div className="flex items-center">
         <DropdownMenu>
           <DropdownMenuTrigger className="p-1">
             <LucidePlusSquare className="h-6 w-6 text-red-500" />
@@ -52,7 +55,30 @@ const Navbar = () => {
         </DropdownMenu>
 
         <Theme type="dropdown" />
-        <UserMenu/>
+
+        <UserMenu />
+
+        <Sheet>
+          <SheetTrigger>
+            <LucideMenu className="h-6 w-6 text-red-500 hidden max-sm:block"/>
+          </SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle>
+              <Link to="/" className="flex items-center gap-1">
+                <img src={logo} alt="PlusDev.NET" className="w-9" />
+
+                <h2 className="h2-bold ml-1 font-space-grotesk-bold text-slate-900 dark:text-slate-100">
+                  PlusDev<span className="text-red-500">.NET</span>
+                </h2>
+              </Link>
+              </SheetTitle>
+              <SheetDescription>
+                <BurgerMenuSidebar />
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
       </div>
     </nav>
   );

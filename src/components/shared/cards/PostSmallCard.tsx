@@ -1,7 +1,5 @@
 import { LucideArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import imageLink from "@/components/images/rightside/image.webp";
-
 
 interface Props {
   id: string;
@@ -17,8 +15,7 @@ const PostSmallCard = ({ id, url, title, image }: Props) => {
       className="flex cursor-pointer items-center justify-between gap-2"
     >
       <img
-        src={imageLink}
-        // src={image}
+        src={image}
         alt={title}
         className="h-[50px] w-[50px] rounded-[10px] object-cover transition-all duration-500 hover:scale-105"
       />
