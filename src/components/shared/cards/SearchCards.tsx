@@ -14,7 +14,7 @@ const SearchCards = ({ id, url, title, type, image, icon }: Props) => {
   return (
     <Link
       to={url}
-      className="flex w-full items-center gap-3 px-1 py-2"
+      className="flex w-full items-center gap-3 px-1 py-2 hover:bg-slate-100 dark:hover:bg-slate-700"
     >
     {icon === null ?
       <img
@@ -26,10 +26,10 @@ const SearchCards = ({ id, url, title, type, image, icon }: Props) => {
     }
 
       <div>
-        <p className="body-medium text-zinc-700 dark:text-zinc-400 hover:text-red-500  dark:hover:text-red-400">
+        <p className="body-medium text-zinc-700 dark:text-zinc-400">
             {title}
         </p>
-        <p className="small-semibold mt-1 text-zinc-700 dark:text-zinc-400 hover:text-red-500  dark:hover:text-red-400">
+        <p className="small-semibold mt-1 text-zinc-700 dark:text-zinc-400 ">
             {type}
         </p>
       </div>
