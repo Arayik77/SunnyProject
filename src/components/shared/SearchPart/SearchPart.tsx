@@ -125,8 +125,8 @@ const SearchPart = () => {
             ))}
         </div>
         <div className="h-[1px] bg-slate-400/50 dark:bg-slate-500/50"></div>
-        <div className="px-5 pt-5">
-            <p className="paragraph-semibold mb-4 text-zinc-800 dark:text-zinc-300">Top Matches</p>
+        <div className="pt-5">
+            <p className="px-5 paragraph-semibold mb-4 text-zinc-800 dark:text-zinc-300">Top Matches</p>
 
             {search.map((post) => (
                 <SearchCards
