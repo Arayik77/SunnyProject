@@ -1,6 +1,6 @@
 import AboutPageAsync from "@/pages/AboutPage/AboutPage.async";
 import MainPageAsync from "@/pages/MainPage/MainPage.async";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import LeftSidebar from "@/components/shared/LeftSidebar/LeftSidebar";
@@ -8,9 +8,8 @@ import RightSidebar from "@/components/shared/RightSidebar/RightSidebar";
 import CommunityPageAsync from "@/pages/Community/CommunityPage.async";
 import ProfilePageAsync from "@/pages/Profile/ProfilePage.async";
 // import PostPageAsync from "@/pages/PostPage/PostPage.async";
-
+  
 const App = () => {
-  const { id } = useParams();
 
   return (
     <main className="relative">
@@ -27,7 +26,7 @@ const App = () => {
                 {/* <Route path="/posts" element={<PostPageAsync />} /> */}
                 <Route path="/about" element={<AboutPageAsync />} />
                 <Route path="/community" element={<CommunityPageAsync />} />
-                <Route path={`/profile/${id}`} element={<ProfilePageAsync />} />
+                <Route path="/profile/:id" element={<ProfilePageAsync />} />
               </Routes>
             </Suspense>
           </div>

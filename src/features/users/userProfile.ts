@@ -9,7 +9,7 @@ interface UserState {
   image: string;
   tags: unknown[];
   nickname: string;
-  follow: boolean;
+  follow: unknown[];
   loading: boolean;
   error: string | null;
 }
@@ -21,7 +21,7 @@ const initialState: UserState = {
   image: '',
   tags: [],
   nickname: '',
-  follow: false,
+  follow: [],
   loading: false,
   error: null,
 };
@@ -44,6 +44,9 @@ const userSlice = createSlice({
     setId(state, action) {
       state.id = action.payload;
     },
+    setFollows(state, action) {
+      state.name = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUserProfile.pending, (state) => {
@@ -54,6 +57,7 @@ const userSlice = createSlice({
     builder.addCase(fetchUserProfile.fulfilled, (state, action) => {
       state.loading = false;
       state.profile = action.payload.results;
+      state.follow.push(state.name);
     });
 
     builder.addCase(fetchUserProfile.rejected, (state, action) => {
@@ -63,7 +67,7 @@ const userSlice = createSlice({
   },
 });
 
-export const { setId } = userSlice.actions;
+export const { setId, setFollows } = userSlice.actions;
 export { fetchUserProfile };
 
 export default userSlice.reducer;

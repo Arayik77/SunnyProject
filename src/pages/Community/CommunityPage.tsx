@@ -1,7 +1,6 @@
 import { fetchUsers, setPage, setSearchQuery } from "@/features/users/usersSlice";
 import useDebounce, { useAppDispatch, useAppSelector } from "@/hooks/useUserList";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import ProfilePage from "../Profile/ProfilePage";
 
 const CommunityPage = () => {
@@ -41,7 +40,7 @@ const CommunityPage = () => {
     serchQuery(e.target.value);
     dispatch(setSearchQuery(e.target.value));
   }
-
+  
   return (
     <>
       {/* <h1>Users</h1>

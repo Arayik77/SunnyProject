@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import RenderTag from "../../components/shared/cards/RenderTag";
-import { Badge } from "@/components/ui/badge";
+import { useAppDispatch, useAppSelector } from "@/hooks/useUserList";
+import { setFollows } from "@/features/users/userProfile";
 
 // type tags = {
 //   id: string;
@@ -17,6 +17,16 @@ interface Props {
 }
 
 const ProfilePage = ({ id, name, nickname, image, /*tags */}: Props) => {
+  const dispatch = useAppDispatch();
+
+  const { follow } = useAppSelector(
+    (state) => state.users
+  );
+
+  const handleFollow = () => {
+    dispatch(setFollows(name));
+  };
+
   return (
     <div
       className="flex w-full flex-col items-center justify-center rounded-xl
@@ -41,6 +51,7 @@ const ProfilePage = ({ id, name, nickname, image, /*tags */}: Props) => {
         >
           <Link to={`/profile/${nickname}`}>@{nickname}</Link>
         </span>
+        <button onClick={handleFollow}>Follow</button>
       </div>
 
       {/* <div className="mt-5">
